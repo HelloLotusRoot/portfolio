@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개발자 포트폴리오 | Developer Portfolio</title>
+    <meta name="description" content="사용자 경험을 중시하는 풀스택/프론트엔드 개발자 포트폴리오입니다.">
+    
+    <!-- Open Graph (SEO / SNS 공유용) -->
+    <meta property="og:title" content="개발자 포트폴리오">
+    <meta property="og:description" content="문제를 해결하고 가치를 만드는 개발자의 포트폴리오입니다.">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+    <!-- Background Gradient Orbs -->
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+
+    <!-- Navigation Bar -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-code">&lt;</span>Dev<span class="logo-accent">Portfolio</span><span class="logo-code">/&gt;</span>
+            </a>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#about" class="nav-link"><i class="fa-regular fa-user"></i> 소개</a>
+                <a href="#skills" class="nav-link"><i class="fa-solid fa-code"></i> 기술 스택</a>
+                <a href="#projects" class="nav-link"><i class="fa-solid fa-laptop-code"></i> 프로젝트</a>
+                <a href="#experience" class="nav-link"><i class="fa-regular fa-building"></i> 경력</a>
+                <a href="#contact" class="nav-link"><i class="fa-regular fa-paper-plane"></i> 연락처</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <a href="https://github.com" target="_blank" class="nav-github-btn" rel="noopener">
+                    <i class="fa-brands fa-github"></i> GitHub
+                </a>
+                <button class="hamburger" id="hamburger" aria-label="메뉴 열기">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section" id="hero">
+            <div class="container hero-container">
+                <div class="hero-badge">
+                    <span class="status-dot"></span>
+                    <span>새로운 도전과 기회를 찾고 있습니다</span>
+                </div>
+                
+                <h1 class="hero-title">
+                    안녕하세요, 가치를 만드는<br>
+                    <span class="gradient-text">웹 개발자 홍길동</span>입니다.
+                </h1>
+                
+                <p class="hero-description">
+                    사용자 경험(UX)과 안정적인 아키텍처를 고민하며,<br>
+                    효율적이고 깔끔한 코드로 문제를 해결하는 것을 즐깁니다.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">
+                        프로젝트 둘러보기 <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <button class="btn btn-secondary" id="download-cv-btn">
+                        <i class="fa-solid fa-file-arrow-down"></i> 이력서 다운로드
+                    </button>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="10">0</span><span class="stat-plus">+</span>
+                        <span class="stat-label">완료한 프로젝트</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="5">0</span><span class="stat-plus">+</span>
+                        <span class="stat-label">주요 기술 스택</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="100">0</span><span class="stat-plus">%</span>
+                        <span class="stat-label">열정과 몰입도</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section class="about-section section" id="about">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">ABOUT ME</span>
+                    <h2 class="section-title">개발자로서의 저를 소개합니다</h2>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-card glass-card">
+                        <div class="card-icon"><i class="fa-solid fa-lightbulb"></i></div>
+                        <h3>문제 해결 중심의 사고</h3>
+                        <p>단순 기능 구현을 넘어 원인을 분석하고 지속 가능한 솔루션을 설계합니다.</p>
+                    </div>
+                    <div class="about-card glass-card">
+                        <div class="card-icon"><i class="fa-solid fa-users"></i></div>
+                        <h3>원활한 소통과 협업</h3>
+                        <p>기획자, 디자이너, 동료 개발자와 적극적으로 의견을 나누며 더 나은 결과물을 만듭니다.</p>
+                    </div>
+                    <div class="about-card glass-card">
+                        <div class="card-icon"><i class="fa-solid fa-rocket"></i></div>
+                        <h3>끊임없는 학습</h3>
+                        <p>새로운 기술 동향을 주시하고, 코드 리뷰 및 사이드 프로젝트를 통해 성장합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="skills-section section" id="skills">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">TECH STACK</span>
+                    <h2 class="section-title">사용하는 기술 스택</h2>
+                </div>
+
+                <!-- Skill Filter Tabs -->
+                <div class="filter-tabs" id="skill-tabs">
+                    <button class="tab-btn active" data-category="all">전체</button>
+                    <button class="tab-btn" data-category="frontend">Frontend</button>
+                    <button class="tab-btn" data-category="backend">Backend</button>
+                    <button class="tab-btn" data-category="tools">Tools & DevOps</button>
+                </div>
+
+                <div class="skills-grid" id="skills-grid">
+                    <!-- JavaScript / HTML / CSS -->
+                    <div class="skill-card glass-card" data-category="frontend">
+                        <div class="skill-header">
+                            <i class="fa-brands fa-js skill-icon js-icon"></i>
+                            <div>
+                                <h4>JavaScript (ES6+)</h4>
+                                <span class="skill-tag">Frontend</span>
+                            </div>
+                        </div>
+                        <p class="skill-desc">비동기 처리, DOM 제어, 최신 ES 규격 활용 가능</p>
+                    </div>
+
+                    <div class="skill-card glass-card" data-category="frontend">
+                        <div class="skill-header">
+                            <i class="fa-brands fa-html5 skill-icon html-icon"></i>
+                            <div>
+                                <h4>HTML5 & CSS3</h4>
+                                <span class="skill-tag">Frontend</span>
+                            </div>
+                        </div>
+                        <p class="skill-desc">웹 접근성(a11y), 시맨틱 마크업, Flexbox & Grid 레이아웃</p>
+                    </div>
+
+                    <div class="skill-card glass-card" data-category="frontend">
+                        <div class="skill-header">
+                            <i class="fa-brands fa-react skill-icon react-icon"></i>
+                            <div>
+                                <h4>React.js</h4>
+                                <span class="skill-tag">Frontend</span>
+                            </div>
+                        </div>
+                        <p class="skill-desc">컴포넌트 단위 개발, Hooks, 상태 관리 및 최적화</p>
+                    </div>
+
+                    <div class="skill-card glass-card" data-category="backend">
+                        <div class="skill-header">
+                            <i class="fa-brands fa-node-js skill-icon node-icon"></i>
+                            <div>
+                                <h4>Node.js / Express</h4>
+                                <span class="skill-tag">Backend</span>
+                            </div>
+                        </div>
+                        <p class="skill-desc">RESTful API 설계 및 데이터베이스 연동 경험</p>
+                    </div>
+
+                    <div class="skill-card glass-card" data-category="backend">
+                        <div class="skill-header">
+                            <i class="fa-solid fa-database skill-icon db-icon"></i>
+                            <div>
+                                <h4>MySQL / PostgreSQL</h4>
+                                <span class="skill-tag">Backend</span>
+                            </div>
+                        </div>
+                        <p class="skill-desc">관계형 데이터베이스 스키마 설계 및 쿼리 작성</p>
+                    </div>
+
+                    <div class="skill-card glass-card" data-category="tools">
+                        <div class="skill-header">
+                            <i class="fa-brands fa-github skill-icon git-icon"></i>
+                            <div>
+                                <h4>Git & GitHub</h4>
+                                <span class="skill-tag">Tools</span>
+                            </div>
+                        </div>
+                        <p class="skill-desc">형상 관리, 브랜치 전략(Git-flow), GitHub Pages 배포</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects-section section" id="projects">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">PROJECTS</span>
+                    <h2 class="section-title">대표 프로젝트 모음</h2>
+                </div>
+
+                <!-- Project Category Filter -->
+                <div class="filter-tabs" id="project-tabs">
+                    <button class="tab-btn active" data-filter="all">전체보기</button>
+                    <button class="tab-btn" data-filter="web">웹 애플리케이션</button>
+                    <button class="tab-btn" data-filter="toy">토이 프로젝트</button>
+                </div>
+
+                <div class="projects-grid" id="projects-grid">
+                    <!-- Project Item 1 -->
+                    <article class="project-card glass-card" data-type="web">
+                        <div class="project-img-wrapper">
+                            <div class="project-placeholder-img p-img-1">
+                                <i class="fa-solid fa-chart-line"></i>
+                            </div>
+                            <span class="project-badge">Featured</span>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">실시간 스마트 대시보드</h3>
+                            <p class="project-description">
+                                데이터 시각화 라이브러리를 활용한 반응형 대시보드 시스템입니다. 실시간 상태 모니터링 및 인터랙티브 차트를 제공합니다.
+                            </p>
+                            <div class="project-tech-tags">
+                                <span>JavaScript</span>
+                                <span>Chart.js</span>
+                                <span>CSS Grid</span>
+                            </div>
+                            <div class="project-links">
+                                <button class="btn-sm btn-outline open-modal-btn" data-id="1">
+                                    <i class="fa-solid fa-circle-info"></i> 상세보기
+                                </button>
+                                <a href="https://github.com" target="_blank" class="btn-sm btn-icon" title="GitHub" rel="noopener">
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
+                                <a href="#" class="btn-sm btn-icon" title="Live Demo">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project Item 2 -->
+                    <article class="project-card glass-card" data-type="web">
+                        <div class="project-img-wrapper">
+                            <div class="project-placeholder-img p-img-2">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </div>
+                            <span class="project-badge">Side Project</span>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">모던 이커머스 웹앱</h3>
+                            <p class="project-description">
+                                장바구니, 상품 필터링, 로컬 스토리지 연동 결제 프로세스를 구현한 프론트엔드 모바일 웹 애플리케이션입니다.
+                            </p>
+                            <div class="project-tech-tags">
+                                <span>HTML5</span>
+                                <span>Vanilla JS</span>
+                                <span>CSS3</span>
+                            </div>
+                            <div class="project-links">
+                                <button class="btn-sm btn-outline open-modal-btn" data-id="2">
+                                    <i class="fa-solid fa-circle-info"></i> 상세보기
+                                </button>
+                                <a href="https://github.com" target="_blank" class="btn-sm btn-icon" title="GitHub" rel="noopener">
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
+                                <a href="#" class="btn-sm btn-icon" title="Live Demo">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project Item 3 -->
+                    <article class="project-card glass-card" data-type="toy">
+                        <div class="project-img-wrapper">
+                            <div class="project-placeholder-img p-img-3">
+                                <i class="fa-solid fa-cloud-sun"></i>
+                            </div>
+                            <span class="project-badge">Toy</span>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">날씨 & 일정 관리 앱</h3>
+                            <p class="project-description">
+                                OpenWeather API 기반 실시간 날씨 데이터 수집 및 드래그 앤 드롭 일정 관리 할 일(Todo) 서비스입니다.
+                            </p>
+                            <div class="project-tech-tags">
+                                <span>JavaScript</span>
+                                <span>REST API</span>
+                                <span>FontAwesome</span>
+                            </div>
+                            <div class="project-links">
+                                <button class="btn-sm btn-outline open-modal-btn" data-id="3">
+                                    <i class="fa-solid fa-circle-info"></i> 상세보기
+                                </button>
+                                <a href="https://github.com" target="_blank" class="btn-sm btn-icon" title="GitHub" rel="noopener">
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
+                                <a href="#" class="btn-sm btn-icon" title="Live Demo">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience / Timeline Section -->
+        <section class="experience-section section" id="experience">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">JOURNEY</span>
+                    <h2 class="section-title">경력 및 활동 기록</h2>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content glass-card">
+                            <span class="timeline-date">2024.01 - 현재</span>
+                            <h3>프론트엔드 개발자</h3>
+                            <p class="timeline-company">OO 테크 / 서비스 개발팀</p>
+                            <ul>
+                                <li>신규 웹 서비스 UX/UI 개선 및 반응형 인터페이스 구축</li>
+                                <li>웹 성능 최적화를 통한 로딩 속도 35% 개선</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content glass-card">
+                            <span class="timeline-date">2023.06 - 2023.12</span>
+                            <h3>웹 개발 부트캠프 수료</h3>
+                            <p class="timeline-company">개발자 양성 과정</p>
+                            <ul>
+                                <li>HTML, CSS, JavaScript, React 풀스택 메인 과제 수행</li>
+                                <li>최우수 팀 프로젝트 수상 및 리드 개발자 담당</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section section" id="contact">
+            <div class="container">
+                <div class="contact-box glass-card">
+                    <div class="contact-header">
+                        <span class="section-subtitle">GET IN TOUCH</span>
+                        <h2 class="section-title">함께 일하고 싶으신가요?</h2>
+                        <p>언제든 편하게 메일이나 소셜 미디어로 연락해 주세요.</p>
+                    </div>
+
+                    <div class="contact-email-wrapper">
+                        <span class="email-text" id="email-address">yourname@email.com</span>
+                        <button class="btn btn-primary" id="copy-email-btn">
+                            <i class="fa-regular fa-copy"></i> 이메일 복사
+                        </button>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://github.com" target="_blank" class="social-btn" aria-label="GitHub" rel="noopener">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" class="social-btn" aria-label="LinkedIn" rel="noopener">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://velog.io" target="_blank" class="social-btn" aria-label="Blog" rel="noopener">
+                            <i class="fa-solid fa-blog"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Project Detail Modal -->
+    <div class="modal" id="project-modal">
+        <div class="modal-backdrop" id="modal-backdrop"></div>
+        <div class="modal-card glass-card">
+            <button class="modal-close" id="modal-close-btn">&times;</button>
+            <div class="modal-body" id="modal-body">
+                <!-- Modal Dynamic Content filled by script.js -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="fa-solid fa-circle-check"></i> <span id="toast-message">이메일 주소가 복사되었습니다!</span>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <p>&copy; <span id="year"></span> Developer Portfolio. Hosted on <strong>GitHub Pages</strong>.</p>
+            <button class="scroll-top-btn" id="scroll-top-btn" aria-label="맨 위로 이동">
+                <i class="fa-solid fa-arrow-up"></i>
+            </button>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
