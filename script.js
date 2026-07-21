@@ -1,5 +1,5 @@
 /* ==========================================
-   DEVELOPER PORTFOLIO - INTERACTIVE LOGIC
+   DEVELOPER PORTFOLIO - SCRIPT
    ========================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -9,142 +9,54 @@ document.addEventListener('DOMContentLoaded', () => {
         yearSpan.textContent = new Date().getFullYear();
     }
 
-    // 2. Navbar Scroll Effect
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 40) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
-
-    // 3. Theme Toggle (Dark / Light)
+    // 2. Theme Toggle (Clean Light <-> Clean Dark)
     const themeToggleBtn = document.getElementById('theme-toggle');
     const body = document.body;
 
-    // Check Local Storage Preference
     const savedTheme = localStorage.getItem('portfolio-theme');
-    if (savedTheme === 'light') {
-        body.classList.remove('dark-theme');
-        body.classList.add('light-theme');
+    if (savedTheme === 'dark') {
+        body.classList.add('dark-theme');
         themeToggleBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
     }
 
     themeToggleBtn.addEventListener('click', () => {
-        if (body.classList.contains('dark-theme')) {
-            body.classList.remove('dark-theme');
-            body.classList.add('light-theme');
-            themeToggleBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
-            localStorage.setItem('portfolio-theme', 'light');
-        } else {
-            body.classList.remove('light-theme');
-            body.classList.add('dark-theme');
-            themeToggleBtn.innerHTML = '<i class="fa-solid fa-moon"></i>';
-            localStorage.setItem('portfolio-theme', 'dark');
-        }
+        body.classList.toggle('dark-theme');
+        const isDark = body.classList.contains('dark-theme');
+        themeToggleBtn.innerHTML = isDark ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
+        localStorage.setItem('portfolio-theme', isDark ? 'dark' : 'light');
     });
 
-    // 4. Mobile Hamburger Menu
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('nav-menu');
-
-    if (hamburger && navMenu) {
-        hamburger.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
-
-        // Close mobile menu when link is clicked
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-            });
-        });
-    }
-
-    // 5. Tech Stack Filtering
-    const skillTabs = document.querySelectorAll('#skill-tabs .tab-btn');
-    const skillCards = document.querySelectorAll('.skill-card');
-
-    skillTabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            skillTabs.forEach(btn => btn.classList.remove('active'));
-            tab.classList.add('active');
-
-            const category = tab.getAttribute('data-category');
-
-            skillCards.forEach(card => {
-                if (category === 'all' || card.getAttribute('data-category') === category) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        });
-    });
-
-    // 6. Projects Filtering
-    const projectTabs = document.querySelectorAll('#project-tabs .tab-btn');
-    const projectCards = document.querySelectorAll('.project-card');
-
-    projectTabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            projectTabs.forEach(btn => btn.classList.remove('active'));
-            tab.classList.add('active');
-
-            const filter = tab.getAttribute('data-filter');
-
-            projectCards.forEach(card => {
-                if (filter === 'all' || card.getAttribute('data-type') === filter) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        });
-    });
-
-    // 7. Project Modal Details
+    // 3. Project Detail Modal Data (Notion Database Data)
     const projectData = {
         1: {
-            title: "실시간 스마트 대시보드",
-            subtitle: "웹 시각화 라이브러리를 활용한 모니터링 시스템",
-            period: "2024.03 - 2024.05 (2개월)",
-            role: "프론트엔드 리드 개발 (100%)",
-            description: "실시간으로 전달되는 서버 데이터 스트리밍을 한눈에 파악할 수 있는 반응형 웹 대시보드입니다. 커스텀 차트 인터랙션 및 필터 기능을 제공합니다.",
+            title: "두고내림 (DOGO)",
+            subtitle: "분실물, 습득물, 실종자, 실종동물 통합 위치 제보 플랫폼",
+            period: "2026.05.08 - 2026.06.18",
+            role: "Backend Lead / Fullstack",
+            repo: "https://github.com/mahoora0/dogo",
+            description: "분실물, 습득물, 실종자 및 실종동물 제보 정보를 지도와 연동하여 신속하게 매칭하고 조회할 수 있는 통합 위치 기반 플랫폼입니다.",
             features: [
-                "WebSocket 기반 실시간 데이터 바인딩",
-                "Chart.js 연동 라인/바/파이 차트 모듈 구현",
-                "다크모드/라이트모드 맞춤 컬러 스키마 탑재",
-                "데이터 CSV 다운로드 기능 구현"
+                "Spring 기반 RESTful API 엔드포인트 설계 및 비즈니스 로직 연동",
+                "MySQL 관계형 데이터베이스 스키마 및 인덱스 설계로 조회 속도 최적화",
+                "위치(위도/경도) 기반 분실물 및 습득물 제보 데이터 바인딩",
+                "Git & GitHub 커밋 관리를 통한 팀 프로젝트 브랜치 전략 적용"
             ],
-            tech: ["JavaScript (ES6+)", "Chart.js", "HTML5", "CSS Grid", "Flexbox"]
+            tech: ["Java", "Spring", "MySQL", "Git/GitHub"]
         },
         2: {
-            title: "모던 이커머스 웹앱",
-            subtitle: "장바구니와 로컬 결제 흐름이 포함된 프론트엔드 앱",
-            period: "2024.01 - 2024.02 (1개월)",
-            role: "솔로 개발",
-            description: "사용자 친화적인 인터페이스로 설계된 쇼핑몰 프론트엔드 프로젝트입니다. 카테고리 필터링, 정렬, 장바구니 수량 조절 기능을 제공합니다.",
+            title: "실시간 셔틀버스 위치 서비스",
+            subtitle: "WebSocket 기반 지도 마커 연동 백엔드 시스템",
+            period: "2022.04.04 - 2022.06.09",
+            role: "Backend Lead",
+            repo: "https://github.com/HelloLotusRoot/capstonePro",
+            description: "실시간 셔틀버스의 위치(위도·경도) 데이터를 수집·관리하고, WebSocket 및 API를 통해 실시간 마커 정보를 지도에 연동할 수 있도록 지원하는 서비스입니다.",
             features: [
-                "LocalStorage 연동 장바구니 데이터 지속성 유지",
-                "상품 검색 및 실시간 가격 범위 필터링",
-                "반응형 상품 그리드 및 모바일 카드 뷰 구현"
+                "WebSocket 통신 프로토콜을 활용한 실시간 위치 좌표(위도, 경도) 브로드캐스팅",
+                "운행 중인 셔틀버스 마커 실시간 업데이트 백엔드 API 설계",
+                "MySQL 데이터베이스 연동 및 셔틀 노선/시간표 데이터 관리",
+                "캡스톤 디자인 프로젝트 메인 백엔드 모듈 개발"
             ],
-            tech: ["Vanilla JavaScript", "HTML5", "CSS3", "LocalStorage"]
-        },
-        3: {
-            title: "날씨 & 일정 관리 앱",
-            subtitle: "외부 OpenAPI 연동 개인 생산성 웹앱",
-            period: "2023.11 - 2023.12 (3주)",
-            role: "솔로 개발",
-            description: "사용자의 현재 위치를 기반으로 실시간 날씨 정보를 불러오고, 할 일(Todo)과 일정을 관리할 수 있는 가벼운 데일리 생산성 툴입니다.",
-            features: [
-                "OpenWeather API 및 Geolocation API 연동",
-                "드래그 앤 드롭 태스크 상태 변경",
-                "완료한 일정 수치 통계 표시"
-            ],
-            tech: ["JavaScript", "OpenWeather API", "FontAwesome", "CSS3"]
+            tech: ["Java", "Spring", "MySQL", "WebSocket", "Git/GitHub"]
         }
     };
 
@@ -160,22 +72,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (data) {
                 modalBody.innerHTML = `
-                    <h2 style="font-size: 1.6rem; margin-bottom: 0.3rem;">${data.title}</h2>
-                    <p style="color: var(--accent-indigo); font-size: 0.9rem; margin-bottom: 1rem; font-weight: 600;">${data.subtitle}</p>
-                    <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">
-                        <span><i class="fa-regular fa-calendar"></i> ${data.period}</span> &nbsp;|&nbsp; 
-                        <span><i class="fa-solid fa-user-gear"></i> ${data.role}</span>
+                    <div style="font-family: var(--font-mono); font-size:0.75rem; color:var(--text-muted); margin-bottom: 0.4rem;">
+                        ${data.period} — ${data.role}
                     </div>
-                    <hr style="border: none; border-top: 1px solid var(--border-glass); margin-bottom: 1.5rem;">
-                    <h4 style="margin-bottom: 0.5rem;">프로젝트 개요</h4>
-                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.5rem;">${data.description}</p>
-                    <h4 style="margin-bottom: 0.5rem;">주요 구현 기능</h4>
-                    <ul style="padding-left: 1.2rem; color: var(--text-secondary); font-size: 0.92rem; margin-bottom: 1.5rem;">
-                        ${data.features.map(f => `<li style="margin-bottom: 0.3rem;">${f}</li>`).join('')}
+                    <h2 style="font-size: 1.35rem; margin-bottom: 0.25rem;">${data.title}</h2>
+                    <p style="color: var(--accent-blue); font-size: 0.85rem; margin-bottom: 1.25rem; font-weight: 500;">${data.subtitle}</p>
+                    
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; line-height:1.6; margin-bottom: 1.25rem;">${data.description}</p>
+                    
+                    <h4 style="font-size: 0.9rem; margin-bottom: 0.5rem; font-weight: 700;">주요 구현 내용 및 특징</h4>
+                    <ul style="padding-left: 1.1rem; color: var(--text-secondary); font-size: 0.86rem; margin-bottom: 1.5rem; line-height: 1.6;">
+                        ${data.features.map(f => `<li style="margin-bottom: 0.35rem;">${f}</li>`).join('')}
                     </ul>
-                    <h4 style="margin-bottom: 0.5rem;">사용 기술</h4>
-                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                        ${data.tech.map(t => `<span style="padding: 0.3rem 0.7rem; background: rgba(99,102,241,0.15); color: var(--accent-indigo); border-radius: 6px; font-size: 0.82rem; font-weight: 600;">${t}</span>`).join('')}
+                    
+                    <h4 style="font-size: 0.9rem; margin-bottom: 0.5rem; font-weight: 700;">Tech Stack & Repository</h4>
+                    <div style="display: flex; gap: 0.4rem; flex-wrap: wrap; align-items: center; margin-bottom: 1rem;">
+                        ${data.tech.map(t => `<span class="tech-tag">${t}</span>`).join('')}
+                    </div>
+                    <div>
+                        <a href="${data.repo}" target="_blank" class="btn-detail" rel="noopener">
+                            <i class="fa-brands fa-github"></i> Open Repository &rarr;
+                        </a>
                     </div>
                 `;
                 modal.classList.add('active');
@@ -190,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeModal);
     if (modalBackdrop) modalBackdrop.addEventListener('click', closeModal);
 
-    // 8. Copy Email to Clipboard
+    // 4. Email Copy Action
     const copyEmailBtn = document.getElementById('copy-email-btn');
     const toast = document.getElementById('toast');
 
@@ -201,26 +118,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 toast.classList.add('show');
                 setTimeout(() => {
                     toast.classList.remove('show');
-                }, 3000);
-            }).catch(err => {
-                alert('이메일 주소 복사: ' + email);
+                }, 2500);
+            }).catch(() => {
+                alert('Contact: ' + email);
             });
-        });
-    }
-
-    // 9. Scroll to Top
-    const scrollTopBtn = document.getElementById('scroll-top-btn');
-    if (scrollTopBtn) {
-        scrollTopBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    }
-
-    // 10. Download CV mock action
-    const downloadCvBtn = document.getElementById('download-cv-btn');
-    if (downloadCvBtn) {
-        downloadCvBtn.addEventListener('click', () => {
-            alert('이력서 파일(PDF)이 여기에 연결됩니다.');
         });
     }
 });
