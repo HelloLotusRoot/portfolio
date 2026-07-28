@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "Kakao Map 기반 센터·보호소·제보 위치 마커와 상세 정보 연동",
                 "실종 전단지 제작·저장 기능과 관리자 검색·상태 관리 및 반응형 UI 구현"
             ],
-            tech: ["Java 17", "Spring Boot", "Thymeleaf", "MySQL", "Kakao Maps API", "Python"]
+            tech: ["Java", "Spring Boot", "MySQL", "Kakao Maps API"]
         },
         2: {
             title: "실시간 셔틀버스 위치 서비스",
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "위치 좌표 모델을 위도·경도 Double 타입으로 개선하고 API 요청·응답 구조 정리",
                 "전역 예외 처리와 공통 오류 응답 구조를 구축하고 Kakao OAuth 로그인 연동"
             ],
-            tech: ["Java 17", "Spring Boot", "WebSocket", "STOMP/SockJS", "WebFlux", "Kakao OAuth"]
+            tech: ["Java", "Spring Boot", "WebSocket"]
         },
         3: {
             title: "Life Quest",
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "단계별·비밀 업적과 달성 조건 확인 및 사용자 업적 기록 기능 구현 예정",
                 "LifeDex 목록·상세, 업적 목록·상세 및 비밀 업적 해금 화면 구현 예정"
             ],
-            tech: ["Flutter", "Dart", "Riverpod", "Spring Boot", "Java 17", "MySQL", "Flyway"]
+            tech: ["Flutter", "Spring Boot", "MySQL"]
         }
     };
 
