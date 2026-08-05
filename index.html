@@ -45,26 +45,35 @@
     <main class="container">
         <!-- Hero Section -->
         <section class="hero-section" id="hero">
-            <div class="hero-meta">
-                <span class="status-indicator"></span>
-                <span>Backend & Fullstack Developer</span>
-            </div>
-
-            <h1 class="hero-name">강규림 | 백엔드·풀스택 개발자</h1>
-            <p class="hero-sub">Java / Spring Boot / Flutter / MySQL</p>
-
-            <p class="hero-bio">
-                새로운 기술을 빠르게 익히고 프로젝트에 적용하며 성장하는 개발자 강규림입니다.<br/>
-                맡은 기능을 끝까지 책임지고, 팀원들과 소통하며 더 나은 결과를 만들어갑니다.
-            </p>
-
-            <div class="hero-actions">
-                <a href="#projects" class="btn btn-dark">
-                    Featured Projects <i class="fa-solid fa-arrow-down" style="font-size:0.75rem;"></i>
-                </a>
-                <a href="https://github.com/HelloLotusRoot" target="_blank" class="btn btn-outline" rel="noopener">
-                    <i class="fa-brands fa-github"></i> GitHub Profile
-                </a>
+            <div class="hero-content">
+                <div class="hero-copy">
+                    <div class="hero-meta">
+                        <span class="status-indicator"></span>
+                        <span>Backend & Fullstack Developer</span>
+                    </div>
+                    <div class="hero-kicker">BUILD / CONNECT / SHIP</div>
+                    <h1 class="hero-name">아이디어를<br><span>동작하는 서비스로.</span></h1>
+                    <p class="hero-sub">안녕하세요, 개발자 <strong>강규림</strong>입니다.</p>
+                    <p class="hero-bio">
+                        Java와 Spring Boot를 중심으로 안정적인 백엔드를 설계하고,<br/>
+                        Flutter 화면까지 연결해 사용자가 만나는 결과를 만듭니다.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-dark">프로젝트 보기 <i class="fa-solid fa-arrow-down" style="font-size:0.75rem;"></i></a>
+                        <a href="https://github.com/HelloLotusRoot" target="_blank" class="btn btn-outline" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+                <aside class="hero-panel" aria-label="개발자 요약">
+                    <div class="panel-topline"><span>DEV NOTE — 2026</span><span class="panel-dot"></span></div>
+                    <div class="code-line"><span class="code-key">focus</span><span class="code-value">Backend Architecture</span></div>
+                    <div class="code-line"><span class="code-key">build</span><span class="code-value">Web · Mobile</span></div>
+                    <div class="code-line"><span class="code-key">currently</span><span class="code-value active-value">Life Quest</span></div>
+                    <div class="panel-stats">
+                        <div><strong>03</strong><span>Projects</span></div>
+                        <div><strong>10+</strong><span>Technologies</span></div>
+                        <div><strong>Full</strong><span>Ownership</span></div>
+                    </div>
+                </aside>
             </div>
         </section>
 
@@ -74,19 +83,19 @@
             <h2 class="section-title">핵심 개발 역량</h2>
 
             <div class="highlights-grid">
-                <div class="clean-card highlight-item">
+                <div class="clean-card highlight-item"><span class="highlight-icon"><i class="fa-solid fa-server"></i></span>
                     <h3 class="highlight-title">Spring Boot 기반 백엔드 개발</h3>
                     <p class="highlight-desc">
                         Spring Boot와 JPA를 활용해 REST API와 비즈니스 로직을 구현하고, 공공데이터를 서비스 데이터로 연결한 경험이 있습니다.
                     </p>
                 </div>
-                <div class="clean-card highlight-item">
+                <div class="clean-card highlight-item"><span class="highlight-icon"><i class="fa-solid fa-location-dot"></i></span>
                     <h3 class="highlight-title">지도·실시간 데이터 연동</h3>
                     <p class="highlight-desc">
                         Kakao Maps API와 위치 데이터를 연동하고, WebSocket을 활용해 실시간 지도 마커를 처리하는 서비스를 구현했습니다.
                     </p>
                 </div>
-                <div class="clean-card highlight-item">
+                <div class="clean-card highlight-item"><span class="highlight-icon"><i class="fa-solid fa-layer-group"></i></span>
                     <h3 class="highlight-title">풀스택 구현과 팀 리딩</h3>
                     <p class="highlight-desc">
                         Spring Boot 백엔드부터 Flutter 화면까지 구현하며, 팀장으로서 기능 분담과 프로젝트 통합을 이끌었습니다.
@@ -102,7 +111,7 @@
 
             <div class="projects-list">
                 <!-- Project 3: Life Quest -->
-                <article class="clean-card project-item">
+                <article class="clean-card project-item" data-number="01">
                     <div class="project-header-row">
                         <h3 class="project-title">Life Quest</h3>
                         <span class="project-date">2026.07.23 - 진행 중</span>
@@ -128,7 +137,7 @@
                 </article>
 
                 <!-- Project 1: 두고내림(DOGO) -->
-                <article class="clean-card project-item">
+                <article class="clean-card project-item" data-number="02">
                     <div class="project-header-row">
                         <h3 class="project-title">두고내림 (DOGO)</h3>
                         <span class="project-date">2026.05.08 - 2026.06.18</span>
@@ -150,7 +159,7 @@
                             <a href="https://github.com/mahoora0/dogo" target="_blank" class="btn-detail btn-detail-ghost" rel="noopener">
                                 <i class="fa-brands fa-github"></i> Repository
                             </a>
-                            <a href="https://naver.me/5OliFv1S" target="_blank" class="btn-detail btn-detail-ghost" rel="noopener">
+                            <a href="https://drive.google.com/file/d/19O_VGbNdhbHqwBkCbfY9M_3anVI8hodW/view?usp=drive_link" target="_blank" class="btn-detail btn-detail-ghost" rel="noopener">
                                 <i class="fa-solid fa-circle-play"></i> Video
                             </a>
                         </div>
@@ -158,7 +167,7 @@
                 </article>
 
                 <!-- Project 2: 실시간 셔틀버스 위치 서비스 -->
-                <article class="clean-card project-item">
+                <article class="clean-card project-item" data-number="03">
                     <div class="project-header-row">
                         <h3 class="project-title">실시간 셔틀버스 위치 서비스</h3>
                         <span class="project-date">2022.04.04 - 2022.06.09</span>

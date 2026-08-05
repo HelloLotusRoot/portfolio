@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
             period: "2026.05.08 - 2026.06.18",
             role: "Lead / Fullstack",
             repo: "https://github.com/mahoora0/dogo",
-            video: "https://drive.google.com/file/d/19O_VGbNdhbHqwBkCbfY9M_3anVI8hodW/view?usp=sharing",
+            video: "https://drive.google.com/file/d/19O_VGbNdhbHqwBkCbfY9M_3anVI8hodW/view?usp=drive_link",
             description: "분실물, 습득물, 실종자 및 실종동물 제보 정보를 지도와 연동하여 신속하게 매칭하고 조회할 수 있는 통합 위치 기반 플랫폼입니다.",
             features: [
                 "경찰관서·지하철·코레일 유실물 센터 공공데이터 연동 및 지역별 조회 기능 구현",
