@@ -42,6 +42,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 "Kakao Map 기반 센터·보호소·제보 위치 마커와 상세 정보 연동",
                 "실종 전단지 제작·저장 기능과 관리자 검색·상태 관리 및 반응형 UI 구현"
             ],
+            demoVideos: [
+                "assets/projects/dogo/01_public_data_region_search_web.mp4",
+                "assets/projects/dogo/02_missing_person_animal_api_search_paging_web.mp4",
+                "assets/projects/dogo/03_kakao_map_markers_details_web.mp4",
+                "assets/projects/dogo/04_missing_flyer_admin_responsive_ui_web.mp4"
+            ],
             tech: ["Java", "Spring Boot", "MySQL", "Kakao Maps API"]
         },
         2: {
@@ -80,6 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalBody = document.getElementById('modal-body');
     const modalBackdrop = document.getElementById('modal-backdrop');
     const modalCloseBtn = document.getElementById('modal-close-btn');
+    const modalBox = modal.querySelector('.modal-box');
 
     document.querySelectorAll('.open-modal-btn').forEach(btn => {
         btn.addEventListener('click', () => {
@@ -87,6 +94,27 @@ document.addEventListener('DOMContentLoaded', () => {
             const data = projectData[projId];
 
             if (data) {
+                const featureContent = data.demoVideos
+                    ? `<div class="feature-demo-list">
+                        ${data.features.map((feature, index) => `
+                            <article class="feature-demo-card">
+                                <div class="feature-demo-copy">
+                                    <span class="feature-demo-index">DEMO ${String(index + 1).padStart(2, '0')}</span>
+                                    <p>${feature}</p>
+                                </div>
+                                <div class="feature-demo-media">
+                                    <video controls preload="metadata" playsinline aria-label="${feature} 시연 영상">
+                                        <source src="${data.demoVideos[index]}" type="video/mp4">
+                                        브라우저에서 영상을 재생할 수 없습니다.
+                                    </video>
+                                </div>
+                            </article>
+                        `).join('')}
+                    </div>`
+                    : `<ul class="feature-list">
+                        ${data.features.map(feature => `<li>${feature}</li>`).join('')}
+                    </ul>`;
+
                 modalBody.innerHTML = `
                     <div style="font-family: var(--font-mono); font-size:0.75rem; color:var(--text-muted); margin-bottom: 0.4rem;">
                         ${data.period} — ${data.role}
@@ -96,10 +124,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     
                     <p style="color: var(--text-secondary); font-size: 0.9rem; line-height:1.6; margin-bottom: 1.25rem;">${data.description}</p>
                     
-                    <h4 style="font-size: 0.9rem; margin-bottom: 0.5rem; font-weight: 700;">주요 구현 내용 및 특징</h4>
-                    <ul style="padding-left: 1.1rem; color: var(--text-secondary); font-size: 0.86rem; margin-bottom: 1.5rem; line-height: 1.6;">
-                        ${data.features.map(f => `<li style="margin-bottom: 0.35rem;">${f}</li>`).join('')}
-                    </ul>
+                    <div class="feature-section-heading">
+                        <h4>주요 구현 내용 및 특징</h4>
+                        ${data.demoVideos ? '<span>4 FEATURE DEMOS</span>' : ''}
+                    </div>
+                    ${featureContent}
                     
                     <h4 style="font-size: 0.9rem; margin-bottom: 0.5rem; font-weight: 700;">Tech Stack & Repository</h4>
                     <div style="display: flex; gap: 0.4rem; flex-wrap: wrap; align-items: center; margin-bottom: 1rem;">
@@ -116,17 +145,25 @@ document.addEventListener('DOMContentLoaded', () => {
                         ` : ''}
                     </div>
                 `;
+                modalBox.classList.toggle('has-demo-videos', Boolean(data.demoVideos));
                 modal.classList.add('active');
+                document.body.classList.add('modal-open');
             }
         });
     });
 
     const closeModal = () => {
+        modalBody.querySelectorAll('video').forEach(video => video.pause());
         modal.classList.remove('active');
+        modalBox.classList.remove('has-demo-videos');
+        document.body.classList.remove('modal-open');
     };
 
     if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeModal);
     if (modalBackdrop) modalBackdrop.addEventListener('click', closeModal);
+    document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && modal.classList.contains('active')) closeModal();
+    });
 
     // 4. Email Copy Action
     const copyEmailBtn = document.getElementById('copy-email-btn');
