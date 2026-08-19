@@ -29,12 +29,29 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. Project Detail Modal Data (Notion Database Data)
     const projectData = {
         1: {
+            title: "WePlan",
+            subtitle: "일정 공유와 교대 근무 편성을 연결한 통합 캘린더 플랫폼",
+            period: "2026.06.15 - 2026.08.19",
+            role: "Fullstack Developer",
+            repo: "https://github.com/HelloLotusRoot/wePlan",
+            video: "https://drive.google.com/file/d/1_vtdD5zMqe1cKNU05TviAaFkn-8i-E9C/view?usp=sharing",
+            description: "개인 일정과 교대 근무를 하나의 캘린더에서 관리하고, 친구·가족·동료와 필요한 일정만 권한별로 공유할 수 있는 일정 관리 플랫폼입니다.",
+            features: [
+                "개인 일정·반복 일정·생일·여행·교대 근무를 월간 캘린더에서 통합 관리",
+                "친구 초대와 보기·편집 권한 설정을 통한 대상별 실시간 일정 공유 기능 구현",
+                "연속 근무·야간 휴식·숙련도 등 제약 조건을 반영한 규칙 기반 근무표 자동 배정",
+                "근무 기록·일기·할 일과 월별 근무 통계를 연결하고 Kakao 로그인 연동"
+            ],
+            hasWePlanFlow: true,
+            tech: ["React", "Spring Boot", "MySQL"]
+        },
+        2: {
             title: "두고내림 (DOGO)",
             subtitle: "분실물, 습득물, 실종자, 실종동물 통합 위치 제보 플랫폼",
             period: "2026.05.08 - 2026.06.18",
             role: "Lead / Fullstack",
             repo: "https://github.com/mahoora0/dogo",
-            video: "https://drive.google.com/file/d/19O_VGbNdhbHqwBkCbfY9M_3anVI8hodW/view?usp=drive_link",
+            video: "https://drive.google.com/file/d/1qGmsxF2XNBGHGJl8tr9j7ryC_wEMywu9/view?usp=sharing",
             description: "분실물, 습득물, 실종자 및 실종동물 제보 정보를 지도와 연동하여 신속하게 매칭하고 조회할 수 있는 통합 위치 기반 플랫폼입니다.",
             features: [
                 "경찰관서·지하철·코레일 유실물 센터 공공데이터 연동 및 지역별 조회 기능 구현",
@@ -51,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
             hasErd: true,
             tech: ["Java", "Spring Boot", "MySQL", "Kakao Maps API"]
         },
-        2: {
+        3: {
             title: "실시간 셔틀버스 위치 서비스",
             subtitle: "WebSocket 기반 지도 마커 연동 백엔드 시스템",
             period: "2022.04.04 - 2022.06.09",
@@ -67,10 +84,10 @@ document.addEventListener('DOMContentLoaded', () => {
             hasShuttleErd: true,
             tech: ["Java", "Spring Boot", "WebSocket"]
         },
-        3: {
+        4: {
             title: "Life Quest",
             subtitle: "현실의 경험을 게임처럼 즐기는 GPS 기반 라이프 RPG 플랫폼",
-            period: "2026.07.23 - 진행 중",
+            period: "2026.07.23 - 2026.08.14",
             role: "Lead / Fullstack",
             repo: "https://github.com/mahoora0/LifeQuest",
             description: "현실의 활동을 퀘스트처럼 수행하고 EXP와 레벨을 올리며, 경험 도감과 업적을 수집할 수 있는 모바일 라이프 RPG 서비스입니다.",
@@ -244,6 +261,81 @@ document.addEventListener('DOMContentLoaded', () => {
         </section>
     `;
 
+    const renderWePlanFlow = () => `
+        <section class="erd-showcase weplan-flow" aria-labelledby="weplan-flow-title">
+            <div class="erd-showcase-head">
+                <span class="erd-kicker">CORE SERVICE FLOW</span>
+                <h4 id="weplan-flow-title">핵심 데이터 흐름</h4>
+                <p>화면부터 데이터베이스까지의 전체 계층 대신, 사용자가 로그인하고 일정과 근무를 관리해 구성원과 공유하는 핵심 경험만 정리했습니다.</p>
+            </div>
+
+            <div class="erd-lanes">
+                <article class="erd-lane">
+                    <div class="erd-lane-label">
+                        <span>01</span>
+                        <div><b>사용자 인증</b><small>Authentication</small></div>
+                    </div>
+                    <div class="erd-path">
+                        <div class="erd-entity erd-entity--source"><b>REACT</b><small>로그인 요청</small></div>
+                        <i aria-hidden="true">→</i>
+                        <div class="erd-entity erd-entity--focus"><b>KAKAO OAUTH</b><small>사용자 인증 · 프로필 조회</small></div>
+                        <i aria-hidden="true">→</i>
+                        <div class="erd-entity erd-entity--result"><b>REGISTERED USER</b><small>계정 정보 저장</small></div>
+                    </div>
+                    <p class="erd-lane-note">Kakao 인증 결과를 서버 사용자 정보와 연결하고 개인 캘린더 설정을 불러옴</p>
+                </article>
+
+                <article class="erd-lane">
+                    <div class="erd-lane-label">
+                        <span>02</span>
+                        <div><b>일정 등록과 공유</b><small>Calendar Sharing</small></div>
+                    </div>
+                    <div class="erd-path">
+                        <div class="erd-entity erd-entity--source"><b>CALENDAR UI</b><small>일정 · 반복 · 공개 범위</small></div>
+                        <i aria-hidden="true">→</i>
+                        <div class="erd-entity erd-entity--focus"><b>EVENT API</b><small>CRUD · 공유 권한 적용</small></div>
+                        <i aria-hidden="true">→</i>
+                        <div class="erd-entity erd-entity--result"><b>SHARED CALENDAR</b><small>대상별 일정 동기화</small></div>
+                    </div>
+                    <p class="erd-lane-note"><code>calendar_events</code>와 공유 대상 정보를 함께 저장해 보기·편집 권한별 화면을 구성</p>
+                </article>
+
+                <article class="erd-lane">
+                    <div class="erd-lane-label">
+                        <span>03</span>
+                        <div><b>근무표 자동 배정</b><small>Roster Automation</small></div>
+                    </div>
+                    <div class="erd-path">
+                        <div class="erd-entity erd-entity--source"><b>STAFF · RULES</b><small>인원 · 희망 근무 · 제약</small></div>
+                        <i aria-hidden="true">→</i>
+                        <div class="erd-entity erd-entity--focus"><b>AUTO SCHEDULER</b><small>규칙 검증 · 균형 배정</small></div>
+                        <i aria-hidden="true">→</i>
+                        <div class="erd-entity erd-entity--result"><b>SHIFT SYNC</b><small>개인 캘린더 반영</small></div>
+                    </div>
+                    <p class="erd-lane-note">연속 근무·야간 휴식·숙련도 규칙을 검증하고 확정된 <code>shifts</code>를 연결된 캘린더에 반영</p>
+                </article>
+            </div>
+
+            <div class="erd-supporting">
+                <div>
+                    <span>CORE STATE</span>
+                    <b>통합 일정 데이터</b>
+                    <p><code>calendar_events</code> · <code>shifts</code></p>
+                </div>
+                <div class="erd-supporting--caution">
+                    <span>SHARING CONTROL</span>
+                    <b>대상별 공유 권한</b>
+                    <p><code>shared_users</code> · 공유 범위</p>
+                </div>
+                <div>
+                    <span>DAILY INSIGHT</span>
+                    <b>기록과 통계</b>
+                    <p><code>memos</code> · <code>todos</code> · 근무 현황</p>
+                </div>
+            </div>
+        </section>
+    `;
+
     const renderLifeQuestFlow = () => `
         <section class="erd-showcase lifequest-flow" aria-labelledby="lifequest-flow-title">
             <div class="erd-showcase-head">
@@ -363,6 +455,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     ${data.hasErd ? renderDogoErd() : ''}
                     ${data.hasShuttleErd ? renderShuttleErd() : ''}
+                    ${data.hasWePlanFlow ? renderWePlanFlow() : ''}
                     ${data.hasLifeQuestFlow ? renderLifeQuestFlow() : ''}
 
                     <h4 style="font-size: 0.9rem; margin-bottom: 0.5rem; font-weight: 700;">Tech Stack & Repository</h4>
@@ -381,7 +474,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                 `;
                 modalBox.classList.toggle('has-demo-videos', Boolean(data.demoVideos));
-                modalBox.classList.toggle('has-architecture', Boolean(data.hasErd || data.hasShuttleErd || data.hasLifeQuestFlow));
+                modalBox.classList.toggle('has-architecture', Boolean(data.hasErd || data.hasShuttleErd || data.hasWePlanFlow || data.hasLifeQuestFlow));
                 modal.classList.add('active');
                 document.body.classList.add('modal-open');
             }
