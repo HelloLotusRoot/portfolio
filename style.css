@@ -924,6 +924,12 @@ body { background: var(--bg-primary); }
 .project-header-row, .project-summary, .project-footer-row { grid-column: 2; padding-right: 2.5rem; }
 .project-title { font-size: clamp(1.25rem, 2.2vw, 2rem); }
 .project-item[data-number="03"] .project-title { white-space: nowrap; }
+.project-title--shuttle {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.project-title--shuttle span { display: block; }
 .project-summary { max-width: 760px; }
 .project-preview {
     grid-column: 3;

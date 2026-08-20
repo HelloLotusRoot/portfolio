@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
             period: "2026.06.15 - 2026.08.19",
             role: "Fullstack Developer",
             repo: "https://github.com/HelloLotusRoot/wePlan",
-            video: "https://drive.google.com/file/d/1_vtdD5zMqe1cKNU05TviAaFkn-8i-E9C/view?usp=sharing",
+            video: "https://drive.google.com/file/d/1CFPZybux1H1Fl3eyPnRscw11VfXIBVoK/view?usp=sharing",
             description: "개인 일정과 교대 근무를 하나의 캘린더에서 관리하고, 친구·가족·동료와 필요한 일정만 권한별로 공유할 수 있는 일정 관리 플랫폼입니다.",
             features: [
                 "개인 일정·반복 일정·생일·여행·교대 근무를 월간 캘린더에서 통합 관리",
@@ -57,19 +57,19 @@ document.addEventListener('DOMContentLoaded', () => {
             period: "2026.05.08 - 2026.06.18",
             role: "Lead / Fullstack",
             repo: "https://github.com/mahoora0/dogo",
-            video: "https://drive.google.com/file/d/1qGmsxF2XNBGHGJl8tr9j7ryC_wEMywu9/view?usp=sharing",
+            video: "https://drive.google.com/file/d/1OXhf9TVNoM5oPbFXgbLNgiljGYhz3S-s/view?usp=sharing",
             description: "분실물, 습득물, 실종자 및 실종동물 제보 정보를 지도와 연동하여 신속하게 매칭하고 조회할 수 있는 통합 위치 기반 플랫폼입니다.",
             features: [
                 "경찰관서·지하철·코레일 유실물 센터 공공데이터 연동 및 지역별 조회 기능 구현",
                 "실종자·실종동물 API 데이터 수집과 검색·페이징·상태 처리 기능 개발",
-                "Kakao Map 기반 센터·보호소·제보 위치 마커와 상세 정보 연동",
-                "실종 전단지 제작·저장 기능과 관리자 검색·상태 관리 및 반응형 UI 구현"
+                "실종 전단지 제작·저장 기능",
+                "사용자·관리자 UI 및 반응형 웹 구현"
             ],
             demoVideos: [
                 "assets/projects/dogo/01_public_data_region_search_web.mp4",
-                "assets/projects/dogo/02_missing_person_animal_api_search_paging_web.mp4",
-                "assets/projects/dogo/03_kakao_map_markers_details_web.mp4",
-                "assets/projects/dogo/04_missing_flyer_admin_responsive_ui_web.mp4"
+                "assets/projects/dogo/02_missing_person_animal_api_search_paging_v2_web.mp4",
+                "assets/projects/dogo/03_missing_flyer_creation_save_web.mp4",
+                "assets/projects/dogo/04_user_admin_responsive_ui_web.mp4"
             ],
             hasErd: true,
             tech: ["Java", "Spring Boot", "MySQL", "Kakao Maps API"]
@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
             period: "2026.07.23 - 2026.08.14",
             role: "Lead / Fullstack",
             repo: "https://github.com/mahoora0/LifeQuest",
-            video: "https://drive.google.com/file/d/1paI2Hl3uVOdXJ7izHzIc9zVi2OnrmsSz/view?usp=sharing",
+            video: "https://drive.google.com/file/d/1KRXuK60CMomiMyucWqX1xtKiL3r8Xzv6/view?usp=sharing",
             description: "현실의 활동을 퀘스트처럼 수행하고 EXP와 레벨을 올리며, 경험 도감과 업적을 수집할 수 있는 모바일 라이프 RPG 서비스입니다.",
             features: [
                 "도감 카테고리·항목·사용자별 도감 데이터와 카테고리별 진행률 기능 구현",
