@@ -488,8 +488,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 `;
                 modalBox.classList.toggle('has-demo-videos', Boolean(data.demoVideos));
                 modalBox.classList.toggle('has-architecture', Boolean(data.hasErd || data.hasShuttleErd || data.hasWePlanFlow || data.hasLifeQuestFlow));
+                modalBox.scrollTop = 0;
+                modalBody.scrollTop = 0;
                 modal.classList.add('active');
                 document.body.classList.add('modal-open');
+                requestAnimationFrame(() => {
+                    modalBox.scrollTop = 0;
+                });
             }
         });
     });
