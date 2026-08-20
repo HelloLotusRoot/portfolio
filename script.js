@@ -42,6 +42,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 "연속 근무·야간 휴식·숙련도 등 제약 조건을 반영한 규칙 기반 근무표 자동 배정",
                 "근무 기록·일기·할 일과 월별 근무 통계를 연결하고 Kakao 로그인 연동"
             ],
+            demoVideos: [
+                "assets/projects/weplan/01_calendar_events_web.mp4",
+                "assets/projects/weplan/02_friends_sharing_web.mp4",
+                "assets/projects/weplan/03_auto_roster_web.mp4",
+                "assets/projects/weplan/04_records_stats_web.mp4"
+            ],
             hasWePlanFlow: true,
             tech: ["React", "Spring Boot", "MySQL"]
         },
@@ -90,12 +96,19 @@ document.addEventListener('DOMContentLoaded', () => {
             period: "2026.07.23 - 2026.08.14",
             role: "Lead / Fullstack",
             repo: "https://github.com/mahoora0/LifeQuest",
+            video: "https://drive.google.com/file/d/1paI2Hl3uVOdXJ7izHzIc9zVi2OnrmsSz/view?usp=sharing",
             description: "현실의 활동을 퀘스트처럼 수행하고 EXP와 레벨을 올리며, 경험 도감과 업적을 수집할 수 있는 모바일 라이프 RPG 서비스입니다.",
             features: [
-                "LifeDex 카테고리·항목·사용자 도감 데이터와 카테고리별 진행률 기능 구현 예정",
-                "퀘스트 완료 시 경험 도감에 해당 항목이 자동 등록되는 연동 로직 구현 예정",
-                "단계별·비밀 업적과 달성 조건 확인 및 사용자 업적 기록 기능 구현 예정",
-                "LifeDex 목록·상세, 업적 목록·상세 및 비밀 업적 해금 화면 구현 예정"
+                "도감 카테고리·항목·사용자별 도감 데이터와 카테고리별 진행률 기능 구현",
+                "퀘스트 완료 시 경험 도감에 해당 항목이 자동 등록되는 연동 로직 구현",
+                "단계별 업적·칭호의 달성 조건 확인과 사용자별 달성 기록 기능 구현",
+                "도감 목록·상세, 업적·칭호 목록·상세 및 퀘스트 완료 보상 화면 구현"
+            ],
+            demoVideos: [
+                "assets/projects/lifequest/01_collection_progress_web.mp4",
+                "assets/projects/lifequest/02_quest_completion_collection_web.mp4",
+                "assets/projects/lifequest/03_achievement_progress_secret_web.mp4",
+                "assets/projects/lifequest/04_unlock_achievement_screens_web.mp4"
             ],
             hasLifeQuestFlow: true,
             tech: ["Flutter", "Spring Boot", "MySQL"]
